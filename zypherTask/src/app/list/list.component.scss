@@ -1,0 +1,24 @@
+$cusor: pointer;
+
+.container {
+    table {
+        thead {
+            tr {
+                th:last-child {
+                    position: relative;
+                }
+            }
+        }
+        tbody {
+            tr {
+                cursor: $cusor;
+            }
+        }
+        input[type="checkbox"] {
+            position: absolute;
+            top: 20px;
+            left: 65px;
+            cursor: $cusor;
+        }
+    }
+}
