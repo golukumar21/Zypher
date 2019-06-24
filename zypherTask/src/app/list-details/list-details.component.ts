@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GeneralService } from '../../general.service';
 
 @Component({
   selector: 'app-list-details',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gs: GeneralService, private route: ActivatedRoute) { }
+  id: number;
+  private sub: any;
+  itemDetails: any;
+  gId: any;
 
   ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      this.id = params['id']; 
+    });
+    this.showListDetails();
   }
 
+  showListDetails() {
+    debugger;
+    this.gs.getData().subscribe( res => {
+      
+    })
+  }
 }
