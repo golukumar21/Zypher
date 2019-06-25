@@ -1,4 +1,5 @@
 <div class="row list_details">
+  <h1 *ngIf="noDetails" >Oops... No details for item with id: {{gId}}</h1>
   <div class="col-lg-4 list_items" *ngFor="let i of items">
     <div class="list_items_img">
       <img src={{i.imageURL}} alt="item_image">
@@ -15,4 +16,5 @@
       <img src="../../assets/garbage.png" alt="delete_record">
     </div>
   </div>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
 </div>
