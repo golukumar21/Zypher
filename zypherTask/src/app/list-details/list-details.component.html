@@ -1,7 +1,18 @@
 <div class="row list_details">
-  <div class="col list_items" *ngFor="let i of itemDetails">
+  <div class="col-lg-4 list_items" *ngFor="let i of items">
     <div class="list_items_img">
-      <img src="" alt="item_image">
+      <img src={{i.imageURL}} alt="item_image">
+    </div>
+    <div class="list_item_label">
+      <div class="list_items_name">
+        <strong>{{i.productName}}</strong>
+      </div>
+      <div class="list_item_author">
+        {{i.authorName}}
+      </div>
+    </div>
+    <div class="delete_item">
+      <img src="../../assets/garbage.png" alt="delete_record">
     </div>
   </div>
 </div>

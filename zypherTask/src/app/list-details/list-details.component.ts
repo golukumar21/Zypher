@@ -14,18 +14,24 @@ export class ListDetailsComponent implements OnInit {
   private sub: any;
   itemDetails: any;
   gId: any;
+  items: any;
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id']; 
     });
-    this.showListDetails();
+    this.gId = this.id
+    console.log(this.id)
+    this.showListDetails(this.gId);
   }
 
-  showListDetails() {
-    debugger;
+  showListDetails(arg) {
     this.gs.getData().subscribe( res => {
-      
-    })
+      this.itemDetails = res['themes'].filter(function(el) {
+        return el._id == arg;
+      });
+      this.items = this.itemDetails[0].books;
+      console.log(this.items);
+    });
   }
 }
