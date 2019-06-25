@@ -21,7 +21,6 @@ export class ListDetailsComponent implements OnInit {
       this.id = params['id']; 
     });
     this.gId = this.id
-    console.log(this.id)
     this.showListDetails(this.gId);
   }
 
@@ -31,7 +30,6 @@ export class ListDetailsComponent implements OnInit {
         return el._id == arg;
       });
       this.items = this.itemDetails[0].books;
-      console.log(this.items);
     });
   }
 }
